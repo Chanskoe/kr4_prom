@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'jacoco'
 }
 
 repositories {
@@ -23,16 +22,7 @@ tasks.withType(JavaCompile) {
 }
 
 test {
-    finalizedBy jacocoTestReport
     useJUnitPlatform()
-}
-
-jacoco {
-    toolVersion = "0.8.9"
-}
-
-jacocoTestReport {
-    dependsOn test
 }
 
 tasks.withType(Test) {
